@@ -8,10 +8,10 @@ img = cv.imread('TestImg.jpg')
 laplacian = cv.Laplacian(img,cv.CV_64F)
 
 """first set of four directions"""
-sobelx1 = cv.Sobel(img,cv.CV_64F,1,0,ksize=5)
-sobely1 = cv.Sobel(img,cv.CV_64F,0,1,ksize=5)
-sobelx2 = cv.Sobel(img,cv.CV_64F,1,0,ksize=5)
-sobely2 = cv.Sobel(img,cv.CV_64F,0,1,ksize=5)
+sobelx1 = cv.Sobel(img,cv.CV_64F,1,0,ksize=5, scale=1)
+sobely1 = cv.Sobel(img,cv.CV_64F,0,1,ksize=5, scale=1)
+sobelx2 = cv.Sobel(img,cv.CV_64F,1,0,ksize=5, scale=-1)
+sobely2 = cv.Sobel(img,cv.CV_64F,0,1,ksize=5, scale=-1)
 
 """second set of four directions"""
 sobelx3 = cv.Sobel(img,cv.CV_64F,1,0,ksize=5, scale=math.sqrt(2)/2) + cv.Sobel(img,cv.CV_64F,0,1,ksize=5, scale=math.sqrt(2)/2)
